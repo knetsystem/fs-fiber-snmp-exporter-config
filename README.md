@@ -12,7 +12,6 @@ a single file: `fs_fiber.yml`.
 ## Requirements
 
 - [Podman](https://podman.io/) (recommended)  
-- GNU Make (optional if you use the provided `Makefile`)
 
 ---
 
@@ -65,6 +64,3 @@ Copy `fs_fiber.yml` to your snmp_exporter host and reference it in your service:
 
 ---
 
-## License
-
-MIT
