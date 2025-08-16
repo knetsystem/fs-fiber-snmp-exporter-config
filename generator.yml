@@ -26,4 +26,13 @@ modules:
       - source_indexes: [fsFiberPortIndex]
         lookup: fsFiberPortDescr
         drop_source_indexes: true
- 
+
+    overrides:
+      FS-FIBER-MIB::fsFiberTempStatus:    { type: EnumAsStateSet }
+      FS-FIBER-MIB::fsFiberVoltageStatus: { type: EnumAsStateSet }
+      FS-FIBER-MIB::fsFiberBiasStatus:    { type: EnumAsStateSet }
+
+      # Optional: keep the label via lookup, but don't emit separate series
+      fsFiberPortIndex: { ignore: true }
+      fsFiberPortDescr: { ignore: true }
+
