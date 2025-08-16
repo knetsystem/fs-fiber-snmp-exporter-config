@@ -9,8 +9,10 @@ modules:
     - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.22
     - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.31
     - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.32
+    - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.34
     - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.51
     - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.52
+    - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.53
     metrics:
     - name: fsFiberTemp
       oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.17
@@ -122,6 +124,27 @@ modules:
         type: DisplayString
       - labels: []
         labelname: fsFiberPortIndex
+    - name: fsFiberRXpowerStatus
+      oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.34
+      type: EnumAsStateSet
+      help: The status ok(2) indicates that the Rx power of the Fiber module is in
+        the normal level - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.34
+      indexes:
+      - labelname: fsFiberPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fsFiberPortIndex
+        labelname: fsFiberPortDescr
+        oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.2
+        type: DisplayString
+      - labels: []
+        labelname: fsFiberPortIndex
+      enum_values:
+        1: unknown
+        2: ok
+        3: warning
+        4: alarm
     - name: fsFiberTXpowerIntegerpart
       oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.51
       type: gauge
@@ -154,6 +177,27 @@ modules:
         type: DisplayString
       - labels: []
         labelname: fsFiberPortIndex
+    - name: fsFiberTXpowerStatus
+      oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.53
+      type: EnumAsStateSet
+      help: The status ok(2) indicates that the Tx power of the Fiber module is in
+        the normal level - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.53
+      indexes:
+      - labelname: fsFiberPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fsFiberPortIndex
+        labelname: fsFiberPortDescr
+        oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.2
+        type: DisplayString
+      - labels: []
+        labelname: fsFiberPortIndex
+      enum_values:
+        1: unknown
+        2: ok
+        3: warning
+        4: alarm
     max_repetitions: 50
     retries: 3
     timeout: 10s

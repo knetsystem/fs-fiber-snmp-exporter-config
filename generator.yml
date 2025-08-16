@@ -7,8 +7,10 @@ modules:
       # --- Core Optical Power (SFP / SFP+) ---
       - FS-FIBER-MIB::fsFiberTXpowerIntegerpart
       - FS-FIBER-MIB::fsFiberTXpowerDecimalpart
+      - FS-FIBER-MIB::fsFiberTXpowerStatus
       - FS-FIBER-MIB::fsFiberRXpowerIntegerpart
       - FS-FIBER-MIB::fsFiberRXpowerDecimalpart
+      - FS-FIBER-MIB::fsFiberRXpowerStatus
 
       # --- Temperature & Voltage ---
       - FS-FIBER-MIB::fsFiberTemp
@@ -28,9 +30,11 @@ modules:
         drop_source_indexes: true
 
     overrides:
-      FS-FIBER-MIB::fsFiberTempStatus:    { type: EnumAsStateSet }
-      FS-FIBER-MIB::fsFiberVoltageStatus: { type: EnumAsStateSet }
-      FS-FIBER-MIB::fsFiberBiasStatus:    { type: EnumAsStateSet }
+      FS-FIBER-MIB::fsFiberTempStatus:     { type: EnumAsStateSet }
+      FS-FIBER-MIB::fsFiberVoltageStatus:  { type: EnumAsStateSet }
+      FS-FIBER-MIB::fsFiberBiasStatus:     { type: EnumAsStateSet }
+      FS-FIBER-MIB::fsFiberRXpowerStatus:  { type: EnumAsStateSet }
+      FS-FIBER-MIB::fsFiberTXpowerStatus:  { type: EnumAsStateSet }
 
       # Optional: keep the label via lookup, but don't emit separate series
       fsFiberPortIndex: { ignore: true }
