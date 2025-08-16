@@ -13,44 +13,10 @@ modules:
       # --- Temperature & Voltage ---
       - FS-FIBER-MIB::fsFiberTemp
       - FS-FIBER-MIB::fsFiberTempStatus
-      - FS-FIBER-MIB::fsFiberVoltage
       - FS-FIBER-MIB::fsFiberVoltageStatus
 
       # --- Bias Current ---
-      - FS-FIBER-MIB::fsFiberBias
       - FS-FIBER-MIB::fsFiberBiasStatus
-
-      # --- Channel 1 (QSFP+) ---
-      - FS-FIBER-MIB::fsFiberChannel1TXpowerIntegerpart
-      - FS-FIBER-MIB::fsFiberChannel1TXpowerDecimalpart
-      - FS-FIBER-MIB::fsFiberChannel1RXpowerIntegerpart
-      - FS-FIBER-MIB::fsFiberChannel1RXpowerDecimalpart
-      - FS-FIBER-MIB::fsFiberChannel1Bias
-      - FS-FIBER-MIB::fsFiberChannel1BiasStatus
-
-      # --- Channel 2 (QSFP+) ---
-      - FS-FIBER-MIB::fsFiberChannel2TXpowerIntegerpart
-      - FS-FIBER-MIB::fsFiberChannel2TXpowerDecimalpart
-      - FS-FIBER-MIB::fsFiberChannel2RXpowerIntegerpart
-      - FS-FIBER-MIB::fsFiberChannel2RXpowerDecimalpart
-      - FS-FIBER-MIB::fsFiberChannel2Bias
-      - FS-FIBER-MIB::fsFiberChannel2BiasStatus
-
-      # --- Channel 3 (QSFP+) ---
-      - FS-FIBER-MIB::fsFiberChannel3TXpowerIntegerpart
-      - FS-FIBER-MIB::fsFiberChannel3TXpowerDecimalpart
-      - FS-FIBER-MIB::fsFiberChannel3RXpowerIntegerpart
-      - FS-FIBER-MIB::fsFiberChannel3RXpowerDecimalpart
-      - FS-FIBER-MIB::fsFiberChannel3Bias
-      - FS-FIBER-MIB::fsFiberChannel3BiasStatus
-
-      # --- Channel 4 (QSFP+) ---
-      - FS-FIBER-MIB::fsFiberChannel4TXpowerIntegerpart
-      - FS-FIBER-MIB::fsFiberChannel4TXpowerDecimalpart
-      - FS-FIBER-MIB::fsFiberChannel4RXpowerIntegerpart
-      - FS-FIBER-MIB::fsFiberChannel4RXpowerDecimalpart
-      - FS-FIBER-MIB::fsFiberChannel4Bias
-      - FS-FIBER-MIB::fsFiberChannel4BiasStatus
 
     max_repetitions: 50
     retries: 3
@@ -60,4 +26,13 @@ modules:
       - source_indexes: [fsFiberPortIndex]
         lookup: fsFiberPortDescr
         drop_source_indexes: true
- 
+
+    overrides:
+      FS-FIBER-MIB::fsFiberTempStatus:    { type: EnumAsStateSet }
+      FS-FIBER-MIB::fsFiberVoltageStatus: { type: EnumAsStateSet }
+      FS-FIBER-MIB::fsFiberBiasStatus:    { type: EnumAsStateSet }
+
+      # Optional: keep the label via lookup, but don't emit separate series
+      fsFiberPortIndex: { ignore: true }
+      fsFiberPortDescr: { ignore: true }
+
