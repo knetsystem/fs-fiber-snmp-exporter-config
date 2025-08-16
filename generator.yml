@@ -5,6 +5,7 @@ modules:
       - FS-FIBER-MIB::fsFiberPortDescr
 
       # --- Core Optical Power (SFP / SFP+) ---
+      - FS-FIBER-MIB::fsFiberDDMSupportStatus
       - FS-FIBER-MIB::fsFiberTXpowerIntegerpart
       - FS-FIBER-MIB::fsFiberTXpowerDecimalpart
       - FS-FIBER-MIB::fsFiberTXpowerStatus

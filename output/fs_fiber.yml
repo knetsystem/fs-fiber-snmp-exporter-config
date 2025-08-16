@@ -2,6 +2,7 @@
 modules:
   fs_fiber:
     walk:
+    - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.15
     - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.17
     - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.18
     - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.2
@@ -14,6 +15,25 @@ modules:
     - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.52
     - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.53
     metrics:
+    - name: fsFiberDDMSupportStatus
+      oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.15
+      type: gauge
+      help: This object indicates that whether the Digital Diagnostic Monitors is
+        implemeted. - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.15
+      indexes:
+      - labelname: fsFiberPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fsFiberPortIndex
+        labelname: fsFiberPortDescr
+        oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.2
+        type: DisplayString
+      - labels: []
+        labelname: fsFiberPortIndex
+      enum_values:
+        1: "true"
+        2: "false"
     - name: fsFiberTemp
       oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.17
       type: gauge
