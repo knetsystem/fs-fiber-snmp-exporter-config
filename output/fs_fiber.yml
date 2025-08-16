@@ -2,6 +2,7 @@
 modules:
   fs_fiber:
     walk:
+    - 1.3.6.1.2.1.31.1.1.1.18
     - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.15
     - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.17
     - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.18
@@ -15,6 +16,14 @@ modules:
     - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.52
     - 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.53
     metrics:
+    - name: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+      help: This object is an 'alias' name for the interface as specified by a network
+        manager, and provides a non-volatile 'handle' for the interface - 1.3.6.1.2.1.31.1.1.1.18
+      indexes:
+      - labelname: ifIndex
+        type: gauge
     - name: fsFiberDDMSupportStatus
       oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.15
       type: gauge
@@ -28,6 +37,11 @@ modules:
         - fsFiberPortIndex
         labelname: fsFiberPortDescr
         oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.2
+        type: DisplayString
+      - labels:
+        - fsFiberPortIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
         type: DisplayString
       - labels: []
         labelname: fsFiberPortIndex
@@ -47,6 +61,11 @@ modules:
         labelname: fsFiberPortDescr
         oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.2
         type: DisplayString
+      - labels:
+        - fsFiberPortIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
       - labels: []
         labelname: fsFiberPortIndex
     - name: fsFiberTempStatus
@@ -62,6 +81,11 @@ modules:
         - fsFiberPortIndex
         labelname: fsFiberPortDescr
         oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.2
+        type: DisplayString
+      - labels:
+        - fsFiberPortIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
         type: DisplayString
       - labels: []
         labelname: fsFiberPortIndex
@@ -84,6 +108,11 @@ modules:
         labelname: fsFiberPortDescr
         oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.2
         type: DisplayString
+      - labels:
+        - fsFiberPortIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
       - labels: []
         labelname: fsFiberPortIndex
       enum_values:
@@ -104,6 +133,11 @@ modules:
         - fsFiberPortIndex
         labelname: fsFiberPortDescr
         oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.2
+        type: DisplayString
+      - labels:
+        - fsFiberPortIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
         type: DisplayString
       - labels: []
         labelname: fsFiberPortIndex
@@ -126,6 +160,11 @@ modules:
         labelname: fsFiberPortDescr
         oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.2
         type: DisplayString
+      - labels:
+        - fsFiberPortIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
       - labels: []
         labelname: fsFiberPortIndex
     - name: fsFiberRXpowerDecimalpart
@@ -142,6 +181,11 @@ modules:
         labelname: fsFiberPortDescr
         oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.2
         type: DisplayString
+      - labels:
+        - fsFiberPortIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
       - labels: []
         labelname: fsFiberPortIndex
     - name: fsFiberRXpowerStatus
@@ -157,6 +201,11 @@ modules:
         - fsFiberPortIndex
         labelname: fsFiberPortDescr
         oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.2
+        type: DisplayString
+      - labels:
+        - fsFiberPortIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
         type: DisplayString
       - labels: []
         labelname: fsFiberPortIndex
@@ -179,6 +228,11 @@ modules:
         labelname: fsFiberPortDescr
         oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.2
         type: DisplayString
+      - labels:
+        - fsFiberPortIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
       - labels: []
         labelname: fsFiberPortIndex
     - name: fsFiberTXpowerDecimalpart
@@ -195,6 +249,11 @@ modules:
         labelname: fsFiberPortDescr
         oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.2
         type: DisplayString
+      - labels:
+        - fsFiberPortIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
       - labels: []
         labelname: fsFiberPortIndex
     - name: fsFiberTXpowerStatus
@@ -210,6 +269,11 @@ modules:
         - fsFiberPortIndex
         labelname: fsFiberPortDescr
         oid: 1.3.6.1.4.1.52642.1.1.10.2.105.1.1.1.2
+        type: DisplayString
+      - labels:
+        - fsFiberPortIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
         type: DisplayString
       - labels: []
         labelname: fsFiberPortIndex

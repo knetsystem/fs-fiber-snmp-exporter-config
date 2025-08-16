@@ -21,6 +21,9 @@ modules:
       # --- Bias Current ---
       - FS-FIBER-MIB::fsFiberBiasStatus
 
+      # --- Interface Description ---
+      - IF-MIB::ifAlias
+
     max_repetitions: 50
     retries: 3
     timeout: 10s
@@ -29,6 +32,10 @@ modules:
       - source_indexes: [fsFiberPortIndex]
         lookup: fsFiberPortDescr
         drop_source_indexes: true
+
+      - source_indexes: [fsFiberPortIndex]
+        lookup: IF-MIB::ifAlias
+        drop_source_indexes: false
 
     overrides:
       FS-FIBER-MIB::fsFiberTempStatus:     { type: EnumAsStateSet }
